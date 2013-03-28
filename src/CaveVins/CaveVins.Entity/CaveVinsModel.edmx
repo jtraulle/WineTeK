@@ -1,0 +1,816 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Cave_VinsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="Cave_VinsModelStoreContainer">
+          <EntitySet Name="T_APPELLATION_APT" EntityType="Cave_VinsModel.Store.T_APPELLATION_APT" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_BOUTEILLE_BTL" EntityType="Cave_VinsModel.Store.T_BOUTEILLE_BTL" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_CHATEAU_CHT" EntityType="Cave_VinsModel.Store.T_CHATEAU_CHT" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_COULEUR_CLR" EntityType="Cave_VinsModel.Store.T_COULEUR_CLR" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_EMPLACEMENT_EMP" EntityType="Cave_VinsModel.Store.T_EMPLACEMENT_EMP" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_FLACONNAGE_FCG" EntityType="Cave_VinsModel.Store.T_FLACONNAGE_FCG" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_INVENTAIRE_INV" EntityType="Cave_VinsModel.Store.T_INVENTAIRE_INV" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_LIEU_LIE" EntityType="Cave_VinsModel.Store.T_LIEU_LIE" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_PAYS_PAY" EntityType="Cave_VinsModel.Store.T_PAYS_PAY" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_REGION_REG" EntityType="Cave_VinsModel.Store.T_REGION_REG" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_STOCKAGE_STO" EntityType="Cave_VinsModel.Store.T_STOCKAGE_STO" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_T_APPELL_POSSEDE_T_REGION" Association="Cave_VinsModel.Store.FK_T_APPELL_POSSEDE_T_REGION">
+            <End Role="T_REGION_REG" EntitySet="T_REGION_REG" />
+            <End Role="T_APPELLATION_APT" EntitySet="T_APPELLATION_APT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_BOUTEI_A_POUR_CO_T_FLACON" Association="Cave_VinsModel.Store.FK_T_BOUTEI_A_POUR_CO_T_FLACON">
+            <End Role="T_FLACONNAGE_FCG" EntitySet="T_FLACONNAGE_FCG" />
+            <End Role="T_BOUTEILLE_BTL" EntitySet="T_BOUTEILLE_BTL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_BOUTEI_EST_DE_T_COULEU" Association="Cave_VinsModel.Store.FK_T_BOUTEI_EST_DE_T_COULEU">
+            <End Role="T_COULEUR_CLR" EntitySet="T_COULEUR_CLR" />
+            <End Role="T_BOUTEILLE_BTL" EntitySet="T_BOUTEILLE_BTL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_BOUTEI_PRODUIT_T_CHATEA" Association="Cave_VinsModel.Store.FK_T_BOUTEI_PRODUIT_T_CHATEA">
+            <End Role="T_CHATEAU_CHT" EntitySet="T_CHATEAU_CHT" />
+            <End Role="T_BOUTEILLE_BTL" EntitySet="T_BOUTEILLE_BTL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_CHATEA_A_POUR_T_APPELL" Association="Cave_VinsModel.Store.FK_T_CHATEA_A_POUR_T_APPELL">
+            <End Role="T_APPELLATION_APT" EntitySet="T_APPELLATION_APT" />
+            <End Role="T_CHATEAU_CHT" EntitySet="T_CHATEAU_CHT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_EMPLACEMENT_EMP_T_LIEU_LIE" Association="Cave_VinsModel.Store.FK_T_EMPLACEMENT_EMP_T_LIEU_LIE">
+            <End Role="T_LIEU_LIE" EntitySet="T_LIEU_LIE" />
+            <End Role="T_EMPLACEMENT_EMP" EntitySet="T_EMPLACEMENT_EMP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_INVENTAIRE_INV_T_BOUTEILLE_BTL" Association="Cave_VinsModel.Store.FK_T_INVENTAIRE_INV_T_BOUTEILLE_BTL">
+            <End Role="T_BOUTEILLE_BTL" EntitySet="T_BOUTEILLE_BTL" />
+            <End Role="T_INVENTAIRE_INV" EntitySet="T_INVENTAIRE_INV" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_REGION_APPARTIEN_T_PAYS_P" Association="Cave_VinsModel.Store.FK_T_REGION_APPARTIEN_T_PAYS_P">
+            <End Role="T_PAYS_PAY" EntitySet="T_PAYS_PAY" />
+            <End Role="T_REGION_REG" EntitySet="T_REGION_REG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_STOCKAGE_STO_T_BOUTEILLE_BTL" Association="Cave_VinsModel.Store.FK_T_STOCKAGE_STO_T_BOUTEILLE_BTL">
+            <End Role="T_BOUTEILLE_BTL" EntitySet="T_BOUTEILLE_BTL" />
+            <End Role="T_STOCKAGE_STO" EntitySet="T_STOCKAGE_STO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_STOCKAGE_STO_T_EMPLACEMENT_EMP" Association="Cave_VinsModel.Store.FK_T_STOCKAGE_STO_T_EMPLACEMENT_EMP">
+            <End Role="T_EMPLACEMENT_EMP" EntitySet="T_EMPLACEMENT_EMP" />
+            <End Role="T_STOCKAGE_STO" EntitySet="T_STOCKAGE_STO" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="T_APPELLATION_APT">
+          <Key>
+            <PropertyRef Name="APT_I_ID" />
+          </Key>
+          <Property Name="APT_I_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="REG_C_CODE" Type="char" Nullable="false" MaxLength="3" />
+          <Property Name="APT_S_NOM" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="T_BOUTEILLE_BTL">
+          <Key>
+            <PropertyRef Name="BTL_I_ID" />
+          </Key>
+          <Property Name="BTL_I_ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FCG_I_ID" Type="int" Nullable="false" />
+          <Property Name="CHT_I_ID" Type="bigint" Nullable="false" />
+          <Property Name="CLR_I_ID" Type="int" Nullable="false" />
+          <Property Name="BTL_I_MILLESIME" Type="int" Nullable="false" />
+          <Property Name="BTL_R_PRIXBAS" Type="float" />
+          <Property Name="BTL_R_PRIXHAUT" Type="float" />
+        </EntityType>
+        <EntityType Name="T_CHATEAU_CHT">
+          <Key>
+            <PropertyRef Name="CHT_I_ID" />
+          </Key>
+          <Property Name="CHT_I_ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="APT_I_ID" Type="int" Nullable="false" />
+          <Property Name="CHT_S_CHATEAU" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="CHT_T_DESCRIPTION" Type="text" />
+        </EntityType>
+        <EntityType Name="T_COULEUR_CLR">
+          <Key>
+            <PropertyRef Name="CLR_I_ID" />
+          </Key>
+          <Property Name="CLR_I_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CLR_S_NOM" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="T_EMPLACEMENT_EMP">
+          <Key>
+            <PropertyRef Name="EMP_I_ID" />
+          </Key>
+          <Property Name="EMP_I_ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LIE_I_ID" Type="bigint" />
+          <Property Name="EMP_I_POSH" Type="int" />
+          <Property Name="EMP_I_POSV" Type="int" />
+        </EntityType>
+        <EntityType Name="T_FLACONNAGE_FCG">
+          <Key>
+            <PropertyRef Name="FCG_I_ID" />
+          </Key>
+          <Property Name="FCG_I_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FCG_S_NOM" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="FCG_R_CONTENANCE" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_INVENTAIRE_INV">
+          <Key>
+            <PropertyRef Name="BTL_I_ID" />
+          </Key>
+          <Property Name="BTL_I_ID" Type="bigint" Nullable="false" />
+          <Property Name="INV_I_NB" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_LIEU_LIE">
+          <Key>
+            <PropertyRef Name="LIE_I_ID" />
+          </Key>
+          <Property Name="LIE_I_ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LIE_S_NOM" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="LIE_I_NBHOR" Type="int" Nullable="false" />
+          <Property Name="LIE_I_NBVERT" Type="int" Nullable="false" />
+          <Property Name="LIE_I_NBHEMP" Type="int" Nullable="false" />
+          <Property Name="LIE_I_NBVEMP" Type="int" Nullable="false" />
+          <Property Name="LIE_I_CAPA" Type="int" Nullable="false" />
+          <Property Name="LIE_C_TYPE" Type="char" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="T_PAYS_PAY">
+          <Key>
+            <PropertyRef Name="PAY_C_CODE" />
+          </Key>
+          <Property Name="PAY_C_CODE" Type="char" Nullable="false" MaxLength="3" />
+          <Property Name="PAY_S_NOM" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="T_REGION_REG">
+          <Key>
+            <PropertyRef Name="REG_C_CODE" />
+          </Key>
+          <Property Name="REG_C_CODE" Type="char" Nullable="false" MaxLength="3" />
+          <Property Name="PAY_C_CODE" Type="char" Nullable="false" MaxLength="3" />
+          <Property Name="REG_S_NOM" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="T_STOCKAGE_STO">
+          <Key>
+            <PropertyRef Name="STO_I_ID" />
+          </Key>
+          <Property Name="STO_I_ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="STO_I_TYPE" Type="int" Nullable="false" />
+          <Property Name="BTL_I_ID" Type="bigint" Nullable="false" />
+          <Property Name="EMP_I_ID" Type="bigint" Nullable="false" />
+          <Property Name="STO_I_QTE" Type="int" Nullable="false" />
+          <Property Name="STO_I_PLACE" Type="int" />
+        </EntityType>
+        <Association Name="FK_T_APPELL_POSSEDE_T_REGION">
+          <End Role="T_REGION_REG" Type="Cave_VinsModel.Store.T_REGION_REG" Multiplicity="1" />
+          <End Role="T_APPELLATION_APT" Type="Cave_VinsModel.Store.T_APPELLATION_APT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_REGION_REG">
+              <PropertyRef Name="REG_C_CODE" />
+            </Principal>
+            <Dependent Role="T_APPELLATION_APT">
+              <PropertyRef Name="REG_C_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_BOUTEI_A_POUR_CO_T_FLACON">
+          <End Role="T_FLACONNAGE_FCG" Type="Cave_VinsModel.Store.T_FLACONNAGE_FCG" Multiplicity="1" />
+          <End Role="T_BOUTEILLE_BTL" Type="Cave_VinsModel.Store.T_BOUTEILLE_BTL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_FLACONNAGE_FCG">
+              <PropertyRef Name="FCG_I_ID" />
+            </Principal>
+            <Dependent Role="T_BOUTEILLE_BTL">
+              <PropertyRef Name="FCG_I_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_BOUTEI_EST_DE_T_COULEU">
+          <End Role="T_COULEUR_CLR" Type="Cave_VinsModel.Store.T_COULEUR_CLR" Multiplicity="1" />
+          <End Role="T_BOUTEILLE_BTL" Type="Cave_VinsModel.Store.T_BOUTEILLE_BTL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_COULEUR_CLR">
+              <PropertyRef Name="CLR_I_ID" />
+            </Principal>
+            <Dependent Role="T_BOUTEILLE_BTL">
+              <PropertyRef Name="CLR_I_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_BOUTEI_PRODUIT_T_CHATEA">
+          <End Role="T_CHATEAU_CHT" Type="Cave_VinsModel.Store.T_CHATEAU_CHT" Multiplicity="1" />
+          <End Role="T_BOUTEILLE_BTL" Type="Cave_VinsModel.Store.T_BOUTEILLE_BTL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_CHATEAU_CHT">
+              <PropertyRef Name="CHT_I_ID" />
+            </Principal>
+            <Dependent Role="T_BOUTEILLE_BTL">
+              <PropertyRef Name="CHT_I_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_CHATEA_A_POUR_T_APPELL">
+          <End Role="T_APPELLATION_APT" Type="Cave_VinsModel.Store.T_APPELLATION_APT" Multiplicity="1" />
+          <End Role="T_CHATEAU_CHT" Type="Cave_VinsModel.Store.T_CHATEAU_CHT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_APPELLATION_APT">
+              <PropertyRef Name="APT_I_ID" />
+            </Principal>
+            <Dependent Role="T_CHATEAU_CHT">
+              <PropertyRef Name="APT_I_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_EMPLACEMENT_EMP_T_LIEU_LIE">
+          <End Role="T_LIEU_LIE" Type="Cave_VinsModel.Store.T_LIEU_LIE" Multiplicity="0..1" />
+          <End Role="T_EMPLACEMENT_EMP" Type="Cave_VinsModel.Store.T_EMPLACEMENT_EMP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_LIEU_LIE">
+              <PropertyRef Name="LIE_I_ID" />
+            </Principal>
+            <Dependent Role="T_EMPLACEMENT_EMP">
+              <PropertyRef Name="LIE_I_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_INVENTAIRE_INV_T_BOUTEILLE_BTL">
+          <End Role="T_BOUTEILLE_BTL" Type="Cave_VinsModel.Store.T_BOUTEILLE_BTL" Multiplicity="1" />
+          <End Role="T_INVENTAIRE_INV" Type="Cave_VinsModel.Store.T_INVENTAIRE_INV" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="T_BOUTEILLE_BTL">
+              <PropertyRef Name="BTL_I_ID" />
+            </Principal>
+            <Dependent Role="T_INVENTAIRE_INV">
+              <PropertyRef Name="BTL_I_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_REGION_APPARTIEN_T_PAYS_P">
+          <End Role="T_PAYS_PAY" Type="Cave_VinsModel.Store.T_PAYS_PAY" Multiplicity="1" />
+          <End Role="T_REGION_REG" Type="Cave_VinsModel.Store.T_REGION_REG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_PAYS_PAY">
+              <PropertyRef Name="PAY_C_CODE" />
+            </Principal>
+            <Dependent Role="T_REGION_REG">
+              <PropertyRef Name="PAY_C_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_STOCKAGE_STO_T_BOUTEILLE_BTL">
+          <End Role="T_BOUTEILLE_BTL" Type="Cave_VinsModel.Store.T_BOUTEILLE_BTL" Multiplicity="1" />
+          <End Role="T_STOCKAGE_STO" Type="Cave_VinsModel.Store.T_STOCKAGE_STO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_BOUTEILLE_BTL">
+              <PropertyRef Name="BTL_I_ID" />
+            </Principal>
+            <Dependent Role="T_STOCKAGE_STO">
+              <PropertyRef Name="BTL_I_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_STOCKAGE_STO_T_EMPLACEMENT_EMP">
+          <End Role="T_EMPLACEMENT_EMP" Type="Cave_VinsModel.Store.T_EMPLACEMENT_EMP" Multiplicity="1" />
+          <End Role="T_STOCKAGE_STO" Type="Cave_VinsModel.Store.T_STOCKAGE_STO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_EMPLACEMENT_EMP">
+              <PropertyRef Name="EMP_I_ID" />
+            </Principal>
+            <Dependent Role="T_STOCKAGE_STO">
+              <PropertyRef Name="EMP_I_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="NbBouteillesInEmplacementsFromLieu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="NbBouteillesInLieuByIdBtl" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idLieu" Type="int" Mode="In" />
+          <Parameter Name="idBouteille" Type="int" Mode="In" />
+        </Function>
+        <Function Name="NbEmplacementsOQPSaufIdBtl" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idLieu" Type="int" Mode="In" />
+          <Parameter Name="idBouteille" Type="int" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Cave_VinsModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="Cave_VinsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="T_APPELLATION_APT" EntityType="Cave_VinsModel.T_APPELLATION_APT" />
+          <EntitySet Name="T_BOUTEILLE_BTL" EntityType="Cave_VinsModel.T_BOUTEILLE_BTL" />
+          <EntitySet Name="T_CHATEAU_CHT" EntityType="Cave_VinsModel.T_CHATEAU_CHT" />
+          <EntitySet Name="T_COULEUR_CLR" EntityType="Cave_VinsModel.T_COULEUR_CLR" />
+          <EntitySet Name="T_FLACONNAGE_FCG" EntityType="Cave_VinsModel.T_FLACONNAGE_FCG" />
+          <EntitySet Name="T_PAYS_PAY" EntityType="Cave_VinsModel.T_PAYS_PAY" />
+          <EntitySet Name="T_REGION_REG" EntityType="Cave_VinsModel.T_REGION_REG" />
+          <AssociationSet Name="FK_T_APPELL_POSSEDE_T_REGION" Association="Cave_VinsModel.FK_T_APPELL_POSSEDE_T_REGION">
+            <End Role="T_REGION_REG" EntitySet="T_REGION_REG" />
+            <End Role="T_APPELLATION_APT" EntitySet="T_APPELLATION_APT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_CHATEA_A_POUR_T_APPELL" Association="Cave_VinsModel.FK_T_CHATEA_A_POUR_T_APPELL">
+            <End Role="T_APPELLATION_APT" EntitySet="T_APPELLATION_APT" />
+            <End Role="T_CHATEAU_CHT" EntitySet="T_CHATEAU_CHT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_BOUTEI_A_POUR_CO_T_FLACON" Association="Cave_VinsModel.FK_T_BOUTEI_A_POUR_CO_T_FLACON">
+            <End Role="T_FLACONNAGE_FCG" EntitySet="T_FLACONNAGE_FCG" />
+            <End Role="T_BOUTEILLE_BTL" EntitySet="T_BOUTEILLE_BTL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_BOUTEI_EST_DE_T_COULEU" Association="Cave_VinsModel.FK_T_BOUTEI_EST_DE_T_COULEU">
+            <End Role="T_COULEUR_CLR" EntitySet="T_COULEUR_CLR" />
+            <End Role="T_BOUTEILLE_BTL" EntitySet="T_BOUTEILLE_BTL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_BOUTEI_PRODUIT_T_CHATEA" Association="Cave_VinsModel.FK_T_BOUTEI_PRODUIT_T_CHATEA">
+            <End Role="T_CHATEAU_CHT" EntitySet="T_CHATEAU_CHT" />
+            <End Role="T_BOUTEILLE_BTL" EntitySet="T_BOUTEILLE_BTL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_REGION_APPARTIEN_T_PAYS_P" Association="Cave_VinsModel.FK_T_REGION_APPARTIEN_T_PAYS_P">
+            <End Role="T_PAYS_PAY" EntitySet="T_PAYS_PAY" />
+            <End Role="T_REGION_REG" EntitySet="T_REGION_REG" />
+          </AssociationSet>
+          <EntitySet Name="T_INVENTAIRE_INV" EntityType="Cave_VinsModel.T_INVENTAIRE_INV" />
+          <AssociationSet Name="FK_T_INVENTAIRE_INV_T_BOUTEILLE_BTL" Association="Cave_VinsModel.FK_T_INVENTAIRE_INV_T_BOUTEILLE_BTL">
+            <End Role="T_BOUTEILLE_BTL" EntitySet="T_BOUTEILLE_BTL" />
+            <End Role="T_INVENTAIRE_INV" EntitySet="T_INVENTAIRE_INV" />
+          </AssociationSet>
+          <EntitySet Name="T_EMPLACEMENT_EMP" EntityType="Cave_VinsModel.T_EMPLACEMENT_EMP" />
+          <EntitySet Name="T_LIEU_LIE" EntityType="Cave_VinsModel.T_LIEU_LIE" />
+          <EntitySet Name="T_STOCKAGE_STO" EntityType="Cave_VinsModel.T_STOCKAGE_STO" />
+          <AssociationSet Name="FK_T_STOCKAGE_STO_T_BOUTEILLE_BTL" Association="Cave_VinsModel.FK_T_STOCKAGE_STO_T_BOUTEILLE_BTL">
+            <End Role="T_BOUTEILLE_BTL" EntitySet="T_BOUTEILLE_BTL" />
+            <End Role="T_STOCKAGE_STO" EntitySet="T_STOCKAGE_STO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_EMPLACEMENT_EMP_T_LIEU_LIE" Association="Cave_VinsModel.FK_T_EMPLACEMENT_EMP_T_LIEU_LIE">
+            <End Role="T_LIEU_LIE" EntitySet="T_LIEU_LIE" />
+            <End Role="T_EMPLACEMENT_EMP" EntitySet="T_EMPLACEMENT_EMP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_STOCKAGE_STO_T_EMPLACEMENT_EMP" Association="Cave_VinsModel.FK_T_STOCKAGE_STO_T_EMPLACEMENT_EMP">
+            <End Role="T_EMPLACEMENT_EMP" EntitySet="T_EMPLACEMENT_EMP" />
+            <End Role="T_STOCKAGE_STO" EntitySet="T_STOCKAGE_STO" />
+          </AssociationSet>
+          <FunctionImport Name="NbBouteillesInEmplacementsFromLieu" ReturnType="Collection(Cave_VinsModel.NbBouteillesInEmplacementsFromLieu_Result)">
+          <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="NbEmplacementsOQPSaufIdBtl" ReturnType="Collection(Int32)">
+            <Parameter Name="idLieu" Mode="In" Type="Int32" />
+            <Parameter Name="idBouteille" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="NbBouteillesInLieuByIdBtl" ReturnType="Collection(Int32)">
+            <Parameter Name="idLieu" Mode="In" Type="Int32" />
+            <Parameter Name="idBouteille" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="T_APPELLATION_APT">
+          <Key>
+            <PropertyRef Name="APT_I_ID" />
+          </Key>
+          <Property Name="APT_I_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="REG_C_CODE" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="true" />
+          <Property Name="APT_S_NOM" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="T_REGION_REG" Relationship="Cave_VinsModel.FK_T_APPELL_POSSEDE_T_REGION" FromRole="T_APPELLATION_APT" ToRole="T_REGION_REG" />
+          <NavigationProperty Name="T_CHATEAU_CHT" Relationship="Cave_VinsModel.FK_T_CHATEA_A_POUR_T_APPELL" FromRole="T_APPELLATION_APT" ToRole="T_CHATEAU_CHT" />
+        </EntityType>
+        <EntityType Name="T_BOUTEILLE_BTL">
+          <Key>
+            <PropertyRef Name="BTL_I_ID" />
+          </Key>
+          <Property Name="BTL_I_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FCG_I_ID" Type="Int32" Nullable="false" />
+          <Property Name="CHT_I_ID" Type="Int64" Nullable="false" />
+          <Property Name="CLR_I_ID" Type="Int32" Nullable="false" />
+          <Property Name="BTL_I_MILLESIME" Type="Int32" Nullable="false" />
+          <Property Name="BTL_R_PRIXBAS" Type="Double" />
+          <Property Name="BTL_R_PRIXHAUT" Type="Double" />
+          <NavigationProperty Name="T_FLACONNAGE_FCG" Relationship="Cave_VinsModel.FK_T_BOUTEI_A_POUR_CO_T_FLACON" FromRole="T_BOUTEILLE_BTL" ToRole="T_FLACONNAGE_FCG" />
+          <NavigationProperty Name="T_COULEUR_CLR" Relationship="Cave_VinsModel.FK_T_BOUTEI_EST_DE_T_COULEU" FromRole="T_BOUTEILLE_BTL" ToRole="T_COULEUR_CLR" />
+          <NavigationProperty Name="T_CHATEAU_CHT" Relationship="Cave_VinsModel.FK_T_BOUTEI_PRODUIT_T_CHATEA" FromRole="T_BOUTEILLE_BTL" ToRole="T_CHATEAU_CHT" />
+          <NavigationProperty Name="T_INVENTAIRE_INV" Relationship="Cave_VinsModel.FK_T_INVENTAIRE_INV_T_BOUTEILLE_BTL" FromRole="T_BOUTEILLE_BTL" ToRole="T_INVENTAIRE_INV" />
+          <NavigationProperty Name="T_STOCKAGE_STO" Relationship="Cave_VinsModel.FK_T_STOCKAGE_STO_T_BOUTEILLE_BTL" FromRole="T_BOUTEILLE_BTL" ToRole="T_STOCKAGE_STO" />
+        </EntityType>
+        <EntityType Name="T_CHATEAU_CHT">
+          <Key>
+            <PropertyRef Name="CHT_I_ID" />
+          </Key>
+          <Property Name="CHT_I_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="APT_I_ID" Type="Int32" Nullable="false" />
+          <Property Name="CHT_S_CHATEAU" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="CHT_T_DESCRIPTION" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="T_APPELLATION_APT" Relationship="Cave_VinsModel.FK_T_CHATEA_A_POUR_T_APPELL" FromRole="T_CHATEAU_CHT" ToRole="T_APPELLATION_APT" />
+          <NavigationProperty Name="T_BOUTEILLE_BTL" Relationship="Cave_VinsModel.FK_T_BOUTEI_PRODUIT_T_CHATEA" FromRole="T_CHATEAU_CHT" ToRole="T_BOUTEILLE_BTL" />
+        </EntityType>
+        <EntityType Name="T_COULEUR_CLR">
+          <Key>
+            <PropertyRef Name="CLR_I_ID" />
+          </Key>
+          <Property Name="CLR_I_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CLR_S_NOM" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="T_BOUTEILLE_BTL" Relationship="Cave_VinsModel.FK_T_BOUTEI_EST_DE_T_COULEU" FromRole="T_COULEUR_CLR" ToRole="T_BOUTEILLE_BTL" />
+        </EntityType>
+        <EntityType Name="T_FLACONNAGE_FCG">
+          <Key>
+            <PropertyRef Name="FCG_I_ID" />
+          </Key>
+          <Property Name="FCG_I_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FCG_S_NOM" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="FCG_R_CONTENANCE" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="T_BOUTEILLE_BTL" Relationship="Cave_VinsModel.FK_T_BOUTEI_A_POUR_CO_T_FLACON" FromRole="T_FLACONNAGE_FCG" ToRole="T_BOUTEILLE_BTL" />
+        </EntityType>
+        <EntityType Name="T_PAYS_PAY">
+          <Key>
+            <PropertyRef Name="PAY_C_CODE" />
+          </Key>
+          <Property Name="PAY_C_CODE" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="true" />
+          <Property Name="PAY_S_NOM" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="T_REGION_REG" Relationship="Cave_VinsModel.FK_T_REGION_APPARTIEN_T_PAYS_P" FromRole="T_PAYS_PAY" ToRole="T_REGION_REG" />
+        </EntityType>
+        <EntityType Name="T_REGION_REG">
+          <Key>
+            <PropertyRef Name="REG_C_CODE" />
+          </Key>
+          <Property Name="REG_C_CODE" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="true" />
+          <Property Name="PAY_C_CODE" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="true" />
+          <Property Name="REG_S_NOM" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="T_APPELLATION_APT" Relationship="Cave_VinsModel.FK_T_APPELL_POSSEDE_T_REGION" FromRole="T_REGION_REG" ToRole="T_APPELLATION_APT" />
+          <NavigationProperty Name="T_PAYS_PAY" Relationship="Cave_VinsModel.FK_T_REGION_APPARTIEN_T_PAYS_P" FromRole="T_REGION_REG" ToRole="T_PAYS_PAY" />
+        </EntityType>
+        <Association Name="FK_T_APPELL_POSSEDE_T_REGION">
+          <End Role="T_REGION_REG" Type="Cave_VinsModel.T_REGION_REG" Multiplicity="1" />
+          <End Role="T_APPELLATION_APT" Type="Cave_VinsModel.T_APPELLATION_APT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_REGION_REG">
+              <PropertyRef Name="REG_C_CODE" />
+            </Principal>
+            <Dependent Role="T_APPELLATION_APT">
+              <PropertyRef Name="REG_C_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_CHATEA_A_POUR_T_APPELL">
+          <End Role="T_APPELLATION_APT" Type="Cave_VinsModel.T_APPELLATION_APT" Multiplicity="1" />
+          <End Role="T_CHATEAU_CHT" Type="Cave_VinsModel.T_CHATEAU_CHT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_APPELLATION_APT">
+              <PropertyRef Name="APT_I_ID" />
+            </Principal>
+            <Dependent Role="T_CHATEAU_CHT">
+              <PropertyRef Name="APT_I_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_BOUTEI_A_POUR_CO_T_FLACON">
+          <End Role="T_FLACONNAGE_FCG" Type="Cave_VinsModel.T_FLACONNAGE_FCG" Multiplicity="1" />
+          <End Role="T_BOUTEILLE_BTL" Type="Cave_VinsModel.T_BOUTEILLE_BTL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_FLACONNAGE_FCG">
+              <PropertyRef Name="FCG_I_ID" />
+            </Principal>
+            <Dependent Role="T_BOUTEILLE_BTL">
+              <PropertyRef Name="FCG_I_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_BOUTEI_EST_DE_T_COULEU">
+          <End Role="T_COULEUR_CLR" Type="Cave_VinsModel.T_COULEUR_CLR" Multiplicity="1" />
+          <End Role="T_BOUTEILLE_BTL" Type="Cave_VinsModel.T_BOUTEILLE_BTL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_COULEUR_CLR">
+              <PropertyRef Name="CLR_I_ID" />
+            </Principal>
+            <Dependent Role="T_BOUTEILLE_BTL">
+              <PropertyRef Name="CLR_I_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_BOUTEI_PRODUIT_T_CHATEA">
+          <End Role="T_CHATEAU_CHT" Type="Cave_VinsModel.T_CHATEAU_CHT" Multiplicity="1" />
+          <End Role="T_BOUTEILLE_BTL" Type="Cave_VinsModel.T_BOUTEILLE_BTL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_CHATEAU_CHT">
+              <PropertyRef Name="CHT_I_ID" />
+            </Principal>
+            <Dependent Role="T_BOUTEILLE_BTL">
+              <PropertyRef Name="CHT_I_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_REGION_APPARTIEN_T_PAYS_P">
+          <End Role="T_PAYS_PAY" Type="Cave_VinsModel.T_PAYS_PAY" Multiplicity="1" />
+          <End Role="T_REGION_REG" Type="Cave_VinsModel.T_REGION_REG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_PAYS_PAY">
+              <PropertyRef Name="PAY_C_CODE" />
+            </Principal>
+            <Dependent Role="T_REGION_REG">
+              <PropertyRef Name="PAY_C_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="T_INVENTAIRE_INV">
+          <Key>
+            <PropertyRef Name="BTL_I_ID" />
+          </Key>
+          <Property Type="Int64" Name="BTL_I_ID" Nullable="false" />
+          <Property Type="Int32" Name="INV_I_NB" Nullable="false" />
+          <NavigationProperty Name="T_BOUTEILLE_BTL" Relationship="Cave_VinsModel.FK_T_INVENTAIRE_INV_T_BOUTEILLE_BTL" FromRole="T_INVENTAIRE_INV" ToRole="T_BOUTEILLE_BTL" />
+        </EntityType>
+        <Association Name="FK_T_INVENTAIRE_INV_T_BOUTEILLE_BTL">
+          <End Type="Cave_VinsModel.T_BOUTEILLE_BTL" Role="T_BOUTEILLE_BTL" Multiplicity="1" />
+          <End Type="Cave_VinsModel.T_INVENTAIRE_INV" Role="T_INVENTAIRE_INV" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="T_BOUTEILLE_BTL">
+              <PropertyRef Name="BTL_I_ID" />
+            </Principal>
+            <Dependent Role="T_INVENTAIRE_INV">
+              <PropertyRef Name="BTL_I_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="T_EMPLACEMENT_EMP">
+          <Key>
+            <PropertyRef Name="EMP_I_ID" />
+          </Key>
+          <Property Type="Int64" Name="EMP_I_ID" Nullable="false" />
+          <Property Type="Int64" Name="LIE_I_ID" />
+          <Property Type="Int32" Name="EMP_I_POSH" />
+          <Property Type="Int32" Name="EMP_I_POSV" />
+          <NavigationProperty Name="T_LIEU_LIE" Relationship="Cave_VinsModel.FK_T_EMPLACEMENT_EMP_T_LIEU_LIE" FromRole="T_EMPLACEMENT_EMP" ToRole="T_LIEU_LIE" />
+          <NavigationProperty Name="T_STOCKAGE_STO" Relationship="Cave_VinsModel.FK_T_STOCKAGE_STO_T_EMPLACEMENT_EMP" FromRole="T_EMPLACEMENT_EMP" ToRole="T_STOCKAGE_STO" />
+        </EntityType>
+        <EntityType Name="T_LIEU_LIE">
+          <Key>
+            <PropertyRef Name="LIE_I_ID" />
+          </Key>
+          <Property Type="Int64" Name="LIE_I_ID" Nullable="false" />
+          <Property Type="String" Name="LIE_S_NOM" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="LIE_I_NBHOR" Nullable="false" />
+          <Property Type="Int32" Name="LIE_I_NBVERT" Nullable="false" />
+          <Property Type="Int32" Name="LIE_I_CAPA" Nullable="false" />
+          <Property Type="String" Name="LIE_C_TYPE" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="T_EMPLACEMENT_EMP" Relationship="Cave_VinsModel.FK_T_EMPLACEMENT_EMP_T_LIEU_LIE" FromRole="T_LIEU_LIE" ToRole="T_EMPLACEMENT_EMP" />
+          <Property Type="Int32" Name="LIE_I_NBHEMP" Nullable="false" />
+          <Property Type="Int32" Name="LIE_I_NBVEMP" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_STOCKAGE_STO" Abstract="true">
+          <Key>
+            <PropertyRef Name="STO_I_ID" />
+          </Key>
+          <Property Type="Int64" Name="STO_I_ID" Nullable="false" />
+          <Property Type="Int64" Name="BTL_I_ID" Nullable="false" />
+          <Property Type="Int64" Name="EMP_I_ID" Nullable="false" />
+          <Property Type="Int32" Name="STO_I_QTE" Nullable="false" />
+          <NavigationProperty Name="T_BOUTEILLE_BTL" Relationship="Cave_VinsModel.FK_T_STOCKAGE_STO_T_BOUTEILLE_BTL" FromRole="T_STOCKAGE_STO" ToRole="T_BOUTEILLE_BTL" />
+          <NavigationProperty Name="T_EMPLACEMENT_EMP" Relationship="Cave_VinsModel.FK_T_STOCKAGE_STO_T_EMPLACEMENT_EMP" FromRole="T_STOCKAGE_STO" ToRole="T_EMPLACEMENT_EMP" />
+        </EntityType>
+        <Association Name="FK_T_STOCKAGE_STO_T_BOUTEILLE_BTL">
+          <End Type="Cave_VinsModel.T_BOUTEILLE_BTL" Role="T_BOUTEILLE_BTL" Multiplicity="1" />
+          <End Type="Cave_VinsModel.T_STOCKAGE_STO" Role="T_STOCKAGE_STO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_BOUTEILLE_BTL">
+              <PropertyRef Name="BTL_I_ID" />
+            </Principal>
+            <Dependent Role="T_STOCKAGE_STO">
+              <PropertyRef Name="BTL_I_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_EMPLACEMENT_EMP_T_LIEU_LIE">
+          <End Type="Cave_VinsModel.T_LIEU_LIE" Role="T_LIEU_LIE" Multiplicity="0..1" />
+          <End Type="Cave_VinsModel.T_EMPLACEMENT_EMP" Role="T_EMPLACEMENT_EMP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_LIEU_LIE">
+              <PropertyRef Name="LIE_I_ID" />
+            </Principal>
+            <Dependent Role="T_EMPLACEMENT_EMP">
+              <PropertyRef Name="LIE_I_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_STOCKAGE_STO_T_EMPLACEMENT_EMP">
+          <End Type="Cave_VinsModel.T_EMPLACEMENT_EMP" Role="T_EMPLACEMENT_EMP" Multiplicity="1" />
+          <End Type="Cave_VinsModel.T_STOCKAGE_STO" Role="T_STOCKAGE_STO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_EMPLACEMENT_EMP">
+              <PropertyRef Name="EMP_I_ID" />
+            </Principal>
+            <Dependent Role="T_STOCKAGE_STO">
+              <PropertyRef Name="EMP_I_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="T_STOMAS_STM" BaseType="Cave_VinsModel.T_STOCKAGE_STO" />
+        <EntityType Name="T_STOUNI_STU" BaseType="Cave_VinsModel.T_STOCKAGE_STO" >
+          <Property Type="Int32" Name="STO_I_PLACE" Nullable="false" />
+        </EntityType>
+        <ComplexType Name="NbBouteillesInEmplacementsFromLieu_Result">
+          <Property Type="Int64" Name="EmpID" Nullable="false" />
+          <Property Type="Int64" Name="IdBtl" Nullable="false" />
+          <Property Type="String" Name="Cha" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="Mil" Nullable="false" />
+          <Property Type="Int32" Name="X" Nullable="true" />
+          <Property Type="Int32" Name="Y" Nullable="true" />
+          <Property Type="Int32" Name="Qte" Nullable="true" />
+          <Property Type="Int32" Name="Dispo" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Cave_VinsModelStoreContainer" CdmEntityContainer="Cave_VinsEntities">
+          <EntitySetMapping Name="T_APPELLATION_APT"><EntityTypeMapping TypeName="Cave_VinsModel.T_APPELLATION_APT"><MappingFragment StoreEntitySet="T_APPELLATION_APT">
+            <ScalarProperty Name="APT_I_ID" ColumnName="APT_I_ID" />
+            <ScalarProperty Name="REG_C_CODE" ColumnName="REG_C_CODE" />
+            <ScalarProperty Name="APT_S_NOM" ColumnName="APT_S_NOM" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="T_BOUTEILLE_BTL"><EntityTypeMapping TypeName="Cave_VinsModel.T_BOUTEILLE_BTL"><MappingFragment StoreEntitySet="T_BOUTEILLE_BTL">
+            <ScalarProperty Name="BTL_I_ID" ColumnName="BTL_I_ID" />
+            <ScalarProperty Name="FCG_I_ID" ColumnName="FCG_I_ID" />
+            <ScalarProperty Name="CHT_I_ID" ColumnName="CHT_I_ID" />
+            <ScalarProperty Name="CLR_I_ID" ColumnName="CLR_I_ID" />
+            <ScalarProperty Name="BTL_I_MILLESIME" ColumnName="BTL_I_MILLESIME" />
+            <ScalarProperty Name="BTL_R_PRIXBAS" ColumnName="BTL_R_PRIXBAS" />
+            <ScalarProperty Name="BTL_R_PRIXHAUT" ColumnName="BTL_R_PRIXHAUT" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="T_CHATEAU_CHT"><EntityTypeMapping TypeName="Cave_VinsModel.T_CHATEAU_CHT"><MappingFragment StoreEntitySet="T_CHATEAU_CHT">
+            <ScalarProperty Name="CHT_I_ID" ColumnName="CHT_I_ID" />
+            <ScalarProperty Name="APT_I_ID" ColumnName="APT_I_ID" />
+            <ScalarProperty Name="CHT_S_CHATEAU" ColumnName="CHT_S_CHATEAU" />
+            <ScalarProperty Name="CHT_T_DESCRIPTION" ColumnName="CHT_T_DESCRIPTION" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="T_COULEUR_CLR"><EntityTypeMapping TypeName="Cave_VinsModel.T_COULEUR_CLR"><MappingFragment StoreEntitySet="T_COULEUR_CLR">
+            <ScalarProperty Name="CLR_I_ID" ColumnName="CLR_I_ID" />
+            <ScalarProperty Name="CLR_S_NOM" ColumnName="CLR_S_NOM" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="T_FLACONNAGE_FCG"><EntityTypeMapping TypeName="Cave_VinsModel.T_FLACONNAGE_FCG"><MappingFragment StoreEntitySet="T_FLACONNAGE_FCG">
+            <ScalarProperty Name="FCG_I_ID" ColumnName="FCG_I_ID" />
+            <ScalarProperty Name="FCG_S_NOM" ColumnName="FCG_S_NOM" />
+            <ScalarProperty Name="FCG_R_CONTENANCE" ColumnName="FCG_R_CONTENANCE" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="T_PAYS_PAY"><EntityTypeMapping TypeName="Cave_VinsModel.T_PAYS_PAY"><MappingFragment StoreEntitySet="T_PAYS_PAY">
+            <ScalarProperty Name="PAY_C_CODE" ColumnName="PAY_C_CODE" />
+            <ScalarProperty Name="PAY_S_NOM" ColumnName="PAY_S_NOM" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="T_REGION_REG"><EntityTypeMapping TypeName="Cave_VinsModel.T_REGION_REG"><MappingFragment StoreEntitySet="T_REGION_REG">
+            <ScalarProperty Name="REG_C_CODE" ColumnName="REG_C_CODE" />
+            <ScalarProperty Name="PAY_C_CODE" ColumnName="PAY_C_CODE" />
+            <ScalarProperty Name="REG_S_NOM" ColumnName="REG_S_NOM" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="T_INVENTAIRE_INV">
+            <EntityTypeMapping TypeName="Cave_VinsModel.T_INVENTAIRE_INV">
+              <MappingFragment StoreEntitySet="T_INVENTAIRE_INV">
+                <ScalarProperty Name="INV_I_NB" ColumnName="INV_I_NB" />
+                <ScalarProperty Name="BTL_I_ID" ColumnName="BTL_I_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_EMPLACEMENT_EMP">
+            <EntityTypeMapping TypeName="Cave_VinsModel.T_EMPLACEMENT_EMP">
+              <MappingFragment StoreEntitySet="T_EMPLACEMENT_EMP">
+                <ScalarProperty Name="EMP_I_POSV" ColumnName="EMP_I_POSV" />
+                <ScalarProperty Name="EMP_I_POSH" ColumnName="EMP_I_POSH" />
+                <ScalarProperty Name="LIE_I_ID" ColumnName="LIE_I_ID" />
+                <ScalarProperty Name="EMP_I_ID" ColumnName="EMP_I_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_LIEU_LIE">
+            <EntityTypeMapping TypeName="Cave_VinsModel.T_LIEU_LIE">
+              <MappingFragment StoreEntitySet="T_LIEU_LIE">
+                <ScalarProperty Name="LIE_I_NBVEMP" ColumnName="LIE_I_NBVEMP" />
+                <ScalarProperty Name="LIE_I_NBHEMP" ColumnName="LIE_I_NBHEMP" />
+                <ScalarProperty Name="LIE_C_TYPE" ColumnName="LIE_C_TYPE" />
+                <ScalarProperty Name="LIE_I_CAPA" ColumnName="LIE_I_CAPA" />
+                <ScalarProperty Name="LIE_I_NBVERT" ColumnName="LIE_I_NBVERT" />
+                <ScalarProperty Name="LIE_I_NBHOR" ColumnName="LIE_I_NBHOR" />
+                <ScalarProperty Name="LIE_S_NOM" ColumnName="LIE_S_NOM" />
+                <ScalarProperty Name="LIE_I_ID" ColumnName="LIE_I_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_STOCKAGE_STO">
+            <EntityTypeMapping TypeName="IsTypeOf(Cave_VinsModel.T_STOCKAGE_STO)">
+              <MappingFragment StoreEntitySet="T_STOCKAGE_STO">
+                <ScalarProperty Name="STO_I_ID" ColumnName="STO_I_ID" />
+                <ScalarProperty Name="STO_I_QTE" ColumnName="STO_I_QTE" />
+                <ScalarProperty Name="EMP_I_ID" ColumnName="EMP_I_ID" />
+                <ScalarProperty Name="BTL_I_ID" ColumnName="BTL_I_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(Cave_VinsModel.T_STOMAS_STM)">
+              <MappingFragment StoreEntitySet="T_STOCKAGE_STO">
+                <ScalarProperty Name="STO_I_ID" ColumnName="STO_I_ID" />
+                <Condition ColumnName="STO_I_TYPE" Value="0" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(Cave_VinsModel.T_STOUNI_STU)">
+              <MappingFragment StoreEntitySet="T_STOCKAGE_STO">
+                <ScalarProperty Name="STO_I_ID" ColumnName="STO_I_ID" />
+                <ScalarProperty Name="STO_I_PLACE" ColumnName="STO_I_PLACE" />
+                <Condition ColumnName="STO_I_TYPE" Value="1" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="NbBouteillesInEmplacementsFromLieu" FunctionName="Cave_VinsModel.Store.NbBouteillesInEmplacementsFromLieu">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Cave_VinsModel.NbBouteillesInEmplacementsFromLieu_Result">
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="IdBtl" ColumnName="IdBtl" />
+                <ScalarProperty Name="Cha" ColumnName="Cha" />
+                <ScalarProperty Name="Mil" ColumnName="Mil" />
+                <ScalarProperty Name="X" ColumnName="X" />
+                <ScalarProperty Name="Y" ColumnName="Y" />
+                <ScalarProperty Name="Qte" ColumnName="Qte" />
+                <ScalarProperty Name="Dispo" ColumnName="Dispo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="NbEmplacementsOQPSaufIdBtl" FunctionName="Cave_VinsModel.Store.NbEmplacementsOQPSaufIdBtl" />
+          <FunctionImportMapping FunctionImportName="NbBouteillesInLieuByIdBtl" FunctionName="Cave_VinsModel.Store.NbBouteillesInLieuByIdBtl" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="CaveVinsModel">
+        <EntityTypeShape EntityType="Cave_VinsModel.T_APPELLATION_APT" Width="1.5" PointX="4.75" PointY="0.5" Height="1.9802864583333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cave_VinsModel.T_BOUTEILLE_BTL" Width="1.5" PointX="8.75" PointY="0.5" Height="3.3263964843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cave_VinsModel.T_CHATEAU_CHT" Width="1.5" PointX="6.625" PointY="0.5" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cave_VinsModel.T_COULEUR_CLR" Width="1.5" PointX="8.75" PointY="4.625" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cave_VinsModel.T_FLACONNAGE_FCG" Width="1.5" PointX="11" PointY="2.75" Height="1.7879850260416665" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cave_VinsModel.T_PAYS_PAY" Width="1.5" PointX="0.5" PointY="0.5" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cave_VinsModel.T_REGION_REG" Width="1.5" PointX="2.75" PointY="0.5" Height="1.9802864583333317" IsExpanded="true" />
+        <AssociationConnector Association="Cave_VinsModel.FK_T_APPELL_POSSEDE_T_REGION" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.25" PointY="1.4901432291666659" />
+          <ConnectorPoint PointX="4.75" PointY="1.4901432291666659" />
+        </AssociationConnector>
+        <AssociationConnector Association="Cave_VinsModel.FK_T_CHATEA_A_POUR_T_APPELL" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.25" PointY="1.4901432291666668" />
+          <ConnectorPoint PointX="6.625" PointY="1.4901432291666668" />
+        </AssociationConnector>
+        <AssociationConnector Association="Cave_VinsModel.FK_T_BOUTEI_A_POUR_CO_T_FLACON" ManuallyRouted="false">
+          <ConnectorPoint PointX="11" PointY="3.2881982421875" />
+          <ConnectorPoint PointX="10.25" PointY="3.2881982421875" />
+        </AssociationConnector>
+        <AssociationConnector Association="Cave_VinsModel.FK_T_BOUTEI_EST_DE_T_COULEU" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.5" PointY="4.625" />
+          <ConnectorPoint PointX="9.5" PointY="3.8263964843749996" />
+        </AssociationConnector>
+        <AssociationConnector Association="Cave_VinsModel.FK_T_BOUTEI_PRODUIT_T_CHATEA" ManuallyRouted="false">
+          <ConnectorPoint PointX="8.125" PointY="1.5862939453124998" />
+          <ConnectorPoint PointX="8.75" PointY="1.5862939453124998" />
+        </AssociationConnector>
+        <AssociationConnector Association="Cave_VinsModel.FK_T_REGION_APPARTIEN_T_PAYS_P" ManuallyRouted="false">
+          <ConnectorPoint PointX="2" PointY="1.2978417968749998" />
+          <ConnectorPoint PointX="2.75" PointY="1.2978417968749998" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Cave_VinsModel.T_INVENTAIRE_INV" Width="1.5" PointX="11" PointY="0.75" Height="1.5956835937499996" />
+        <AssociationConnector Association="Cave_VinsModel.FK_T_INVENTAIRE_INV_T_BOUTEILLE_BTL" >
+          <ConnectorPoint PointX="10.25" PointY="1.5478417968749998" />
+          <ConnectorPoint PointX="11" PointY="1.5478417968749998" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Cave_VinsModel.T_EMPLACEMENT_EMP" Width="1.5" PointX="3.25" PointY="3.75" Height="2.1725878906249996" />
+        <EntityTypeShape EntityType="Cave_VinsModel.T_LIEU_LIE" Width="1.5" PointX="0.75" PointY="3.625" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="Cave_VinsModel.T_STOCKAGE_STO" Width="1.5" PointX="5.875" PointY="3.625" Height="2.1725878906249996" />
+        <AssociationConnector Association="Cave_VinsModel.FK_T_STOCKAGE_STO_T_BOUTEILLE_BTL" >
+          <ConnectorPoint PointX="8.75" PointY="3.1800434453124997" />
+          <ConnectorPoint PointX="6.4375" PointY="3.1800434453124997" />
+          <ConnectorPoint PointX="6.4375" PointY="3.625" />
+        </AssociationConnector>
+        <AssociationConnector Association="Cave_VinsModel.FK_T_EMPLACEMENT_EMP_T_LIEU_LIE" >
+          <ConnectorPoint PointX="2.25" PointY="4.8362939453125" />
+          <ConnectorPoint PointX="3.25" PointY="4.8362939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="Cave_VinsModel.FK_T_STOCKAGE_STO_T_EMPLACEMENT_EMP" >
+          <ConnectorPoint PointX="4.75" PointY="4.7737939453125" />
+          <ConnectorPoint PointX="5.875" PointY="4.7737939453125" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Cave_VinsModel.T_STOMAS_STM" Width="1.5" PointX="5" PointY="6.375" Height="1.0187792968750031" />
+        <InheritanceConnector EntityType="Cave_VinsModel.T_STOMAS_STM" >
+          <ConnectorPoint PointX="6.625" PointY="5.797587890625" />
+          <ConnectorPoint PointX="6.625" PointY="6.075" />
+          <ConnectorPoint PointX="5.75" PointY="6.075" />
+          <ConnectorPoint PointX="5.75" PointY="6.375" />
+        </InheritanceConnector>
+        <EntityTypeShape EntityType="Cave_VinsModel.T_STOUNI_STU" Width="1.5" PointX="6.75" PointY="6.375" Height="1.2110807291666665" />
+        <InheritanceConnector EntityType="Cave_VinsModel.T_STOUNI_STU" >
+          <ConnectorPoint PointX="6.625" PointY="5.797587890625" />
+          <ConnectorPoint PointX="6.625" PointY="6.075" />
+          <ConnectorPoint PointX="7.5" PointY="6.075" />
+          <ConnectorPoint PointX="7.5" PointY="6.375" />
+        </InheritanceConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

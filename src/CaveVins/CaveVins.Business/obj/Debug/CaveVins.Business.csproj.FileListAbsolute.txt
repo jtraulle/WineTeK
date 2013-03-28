@@ -1,0 +1,13 @@
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Business\bin\Debug\CaveVins.Business.dll.config
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Business\bin\Debug\CaveVins.Business.dll
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Business\bin\Debug\CaveVins.Business.pdb
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Business\bin\Debug\CaveVins.Data.dll
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Business\bin\Debug\CaveVins.Entity.dll
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Business\bin\Debug\EntityFramework.dll
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Business\bin\Debug\CaveVins.Data.pdb
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Business\bin\Debug\CaveVins.Entity.pdb
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Business\bin\Debug\EntityFramework.xml
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Business\bin\Debug\fr\EntityFramework.resources.dll
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Business\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Business\obj\Debug\CaveVins.Business.dll
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Business\obj\Debug\CaveVins.Business.pdb

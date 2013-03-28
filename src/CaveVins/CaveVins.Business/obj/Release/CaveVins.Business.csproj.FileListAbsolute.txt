@@ -1,0 +1,13 @@
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Business\bin\Release\CaveVins.Business.dll.config
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Business\bin\Release\CaveVins.Business.dll
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Business\bin\Release\CaveVins.Business.pdb
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Business\bin\Release\CaveVins.Data.dll
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Business\bin\Release\CaveVins.Entity.dll
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Business\bin\Release\EntityFramework.dll
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Business\bin\Release\CaveVins.Data.pdb
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Business\bin\Release\CaveVins.Entity.pdb
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Business\bin\Release\EntityFramework.xml
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Business\bin\Release\fr\EntityFramework.resources.dll
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Business\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Business\obj\Release\CaveVins.Business.dll
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Business\obj\Release\CaveVins.Business.pdb

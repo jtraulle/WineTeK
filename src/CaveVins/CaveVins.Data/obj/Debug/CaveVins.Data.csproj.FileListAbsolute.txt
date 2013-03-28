@@ -1,0 +1,14 @@
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Data\bin\Debug\CaveVins.Data.dll.config
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Data\bin\Debug\CaveVins.Data.dll
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Data\bin\Debug\CaveVins.Data.pdb
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Data\bin\Debug\CaveVins.Entity.dll
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Data\bin\Debug\EntityFramework.dll
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Data\bin\Debug\CaveVins.Entity.pdb
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Data\bin\Debug\EntityFramework.xml
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Data\bin\Debug\fr\EntityFramework.resources.dll
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Data\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Data\obj\Debug\CaveVins.Data.Properties.Resources.resources
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Data\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Data\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Data\obj\Debug\CaveVins.Data.dll
+C:\Users\Jean\Desktop\CaveVins\CaveVins.Data\obj\Debug\CaveVins.Data.pdb

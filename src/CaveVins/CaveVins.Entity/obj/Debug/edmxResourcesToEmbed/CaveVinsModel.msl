@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Cave_VinsModelStoreContainer" CdmEntityContainer="Cave_VinsEntities">
+    <EntitySetMapping Name="T_APPELLATION_APT">
+      <EntityTypeMapping TypeName="Cave_VinsModel.T_APPELLATION_APT">
+        <MappingFragment StoreEntitySet="T_APPELLATION_APT">
+          <ScalarProperty Name="APT_I_ID" ColumnName="APT_I_ID" />
+          <ScalarProperty Name="REG_C_CODE" ColumnName="REG_C_CODE" />
+          <ScalarProperty Name="APT_S_NOM" ColumnName="APT_S_NOM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_BOUTEILLE_BTL">
+      <EntityTypeMapping TypeName="Cave_VinsModel.T_BOUTEILLE_BTL">
+        <MappingFragment StoreEntitySet="T_BOUTEILLE_BTL">
+          <ScalarProperty Name="BTL_I_ID" ColumnName="BTL_I_ID" />
+          <ScalarProperty Name="FCG_I_ID" ColumnName="FCG_I_ID" />
+          <ScalarProperty Name="CHT_I_ID" ColumnName="CHT_I_ID" />
+          <ScalarProperty Name="CLR_I_ID" ColumnName="CLR_I_ID" />
+          <ScalarProperty Name="BTL_I_MILLESIME" ColumnName="BTL_I_MILLESIME" />
+          <ScalarProperty Name="BTL_R_PRIXBAS" ColumnName="BTL_R_PRIXBAS" />
+          <ScalarProperty Name="BTL_R_PRIXHAUT" ColumnName="BTL_R_PRIXHAUT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_CHATEAU_CHT">
+      <EntityTypeMapping TypeName="Cave_VinsModel.T_CHATEAU_CHT">
+        <MappingFragment StoreEntitySet="T_CHATEAU_CHT">
+          <ScalarProperty Name="CHT_I_ID" ColumnName="CHT_I_ID" />
+          <ScalarProperty Name="APT_I_ID" ColumnName="APT_I_ID" />
+          <ScalarProperty Name="CHT_S_CHATEAU" ColumnName="CHT_S_CHATEAU" />
+          <ScalarProperty Name="CHT_T_DESCRIPTION" ColumnName="CHT_T_DESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_COULEUR_CLR">
+      <EntityTypeMapping TypeName="Cave_VinsModel.T_COULEUR_CLR">
+        <MappingFragment StoreEntitySet="T_COULEUR_CLR">
+          <ScalarProperty Name="CLR_I_ID" ColumnName="CLR_I_ID" />
+          <ScalarProperty Name="CLR_S_NOM" ColumnName="CLR_S_NOM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_FLACONNAGE_FCG">
+      <EntityTypeMapping TypeName="Cave_VinsModel.T_FLACONNAGE_FCG">
+        <MappingFragment StoreEntitySet="T_FLACONNAGE_FCG">
+          <ScalarProperty Name="FCG_I_ID" ColumnName="FCG_I_ID" />
+          <ScalarProperty Name="FCG_S_NOM" ColumnName="FCG_S_NOM" />
+          <ScalarProperty Name="FCG_R_CONTENANCE" ColumnName="FCG_R_CONTENANCE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_PAYS_PAY">
+      <EntityTypeMapping TypeName="Cave_VinsModel.T_PAYS_PAY">
+        <MappingFragment StoreEntitySet="T_PAYS_PAY">
+          <ScalarProperty Name="PAY_C_CODE" ColumnName="PAY_C_CODE" />
+          <ScalarProperty Name="PAY_S_NOM" ColumnName="PAY_S_NOM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_REGION_REG">
+      <EntityTypeMapping TypeName="Cave_VinsModel.T_REGION_REG">
+        <MappingFragment StoreEntitySet="T_REGION_REG">
+          <ScalarProperty Name="REG_C_CODE" ColumnName="REG_C_CODE" />
+          <ScalarProperty Name="PAY_C_CODE" ColumnName="PAY_C_CODE" />
+          <ScalarProperty Name="REG_S_NOM" ColumnName="REG_S_NOM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_INVENTAIRE_INV">
+      <EntityTypeMapping TypeName="Cave_VinsModel.T_INVENTAIRE_INV">
+        <MappingFragment StoreEntitySet="T_INVENTAIRE_INV">
+          <ScalarProperty Name="INV_I_NB" ColumnName="INV_I_NB" />
+          <ScalarProperty Name="BTL_I_ID" ColumnName="BTL_I_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_EMPLACEMENT_EMP">
+      <EntityTypeMapping TypeName="Cave_VinsModel.T_EMPLACEMENT_EMP">
+        <MappingFragment StoreEntitySet="T_EMPLACEMENT_EMP">
+          <ScalarProperty Name="EMP_I_POSV" ColumnName="EMP_I_POSV" />
+          <ScalarProperty Name="EMP_I_POSH" ColumnName="EMP_I_POSH" />
+          <ScalarProperty Name="LIE_I_ID" ColumnName="LIE_I_ID" />
+          <ScalarProperty Name="EMP_I_ID" ColumnName="EMP_I_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_LIEU_LIE">
+      <EntityTypeMapping TypeName="Cave_VinsModel.T_LIEU_LIE">
+        <MappingFragment StoreEntitySet="T_LIEU_LIE">
+          <ScalarProperty Name="LIE_I_NBVEMP" ColumnName="LIE_I_NBVEMP" />
+          <ScalarProperty Name="LIE_I_NBHEMP" ColumnName="LIE_I_NBHEMP" />
+          <ScalarProperty Name="LIE_C_TYPE" ColumnName="LIE_C_TYPE" />
+          <ScalarProperty Name="LIE_I_CAPA" ColumnName="LIE_I_CAPA" />
+          <ScalarProperty Name="LIE_I_NBVERT" ColumnName="LIE_I_NBVERT" />
+          <ScalarProperty Name="LIE_I_NBHOR" ColumnName="LIE_I_NBHOR" />
+          <ScalarProperty Name="LIE_S_NOM" ColumnName="LIE_S_NOM" />
+          <ScalarProperty Name="LIE_I_ID" ColumnName="LIE_I_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_STOCKAGE_STO">
+      <EntityTypeMapping TypeName="IsTypeOf(Cave_VinsModel.T_STOCKAGE_STO)">
+        <MappingFragment StoreEntitySet="T_STOCKAGE_STO">
+          <ScalarProperty Name="STO_I_ID" ColumnName="STO_I_ID" />
+          <ScalarProperty Name="STO_I_QTE" ColumnName="STO_I_QTE" />
+          <ScalarProperty Name="EMP_I_ID" ColumnName="EMP_I_ID" />
+          <ScalarProperty Name="BTL_I_ID" ColumnName="BTL_I_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Cave_VinsModel.T_STOMAS_STM)">
+        <MappingFragment StoreEntitySet="T_STOCKAGE_STO">
+          <ScalarProperty Name="STO_I_ID" ColumnName="STO_I_ID" />
+          <Condition ColumnName="STO_I_TYPE" Value="0" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Cave_VinsModel.T_STOUNI_STU)">
+        <MappingFragment StoreEntitySet="T_STOCKAGE_STO">
+          <ScalarProperty Name="STO_I_ID" ColumnName="STO_I_ID" />
+          <ScalarProperty Name="STO_I_PLACE" ColumnName="STO_I_PLACE" />
+          <Condition ColumnName="STO_I_TYPE" Value="1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="NbBouteillesInEmplacementsFromLieu" FunctionName="Cave_VinsModel.Store.NbBouteillesInEmplacementsFromLieu">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Cave_VinsModel.NbBouteillesInEmplacementsFromLieu_Result">
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="IdBtl" ColumnName="IdBtl" />
+          <ScalarProperty Name="Cha" ColumnName="Cha" />
+          <ScalarProperty Name="Mil" ColumnName="Mil" />
+          <ScalarProperty Name="X" ColumnName="X" />
+          <ScalarProperty Name="Y" ColumnName="Y" />
+          <ScalarProperty Name="Qte" ColumnName="Qte" />
+          <ScalarProperty Name="Dispo" ColumnName="Dispo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="NbEmplacementsOQPSaufIdBtl" FunctionName="Cave_VinsModel.Store.NbEmplacementsOQPSaufIdBtl" />
+    <FunctionImportMapping FunctionImportName="NbBouteillesInLieuByIdBtl" FunctionName="Cave_VinsModel.Store.NbBouteillesInLieuByIdBtl" />
+  </EntityContainerMapping>
+</Mapping>
